@@ -1488,6 +1488,16 @@ function x_session($value){
 	}
 }
 
+// added on 22/08/2022
+
+function x_seprint($session_variable){
+	if(x_justvalidate($session_variable)){
+		print $_SESSION[$session_variable];
+	}else{
+		print("No variable passed!");
+	}
+}
+
 // newly added on 02/01/2021 started
 
 function x_validatemethod($value){
