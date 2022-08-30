@@ -1039,19 +1039,27 @@ function xstart($pick){
 			}
 			
 function x_trunc($str,$start,$stop){
-$len = strlen($str);
-if(!is_numeric($start) || !is_numeric($stop)){
-return "Error:inproper usage of x_trunc(str,start,stop)";
-}else{
+	$len = strlen($str);
+	if(!is_numeric($start) || !is_numeric($stop)){
+		
+	return "Error:inproper usage of x_trunc(str,start,stop)";
+	
+	}else{
 
-if($len > $start){
-return substr($str,$start,$stop)."...";
-}elseif($len < $start){
-return substr($str,$start,$stop);
-}else{
-return $start;
-}
-}
+	if($len > $stop){
+		
+	  return substr($str,$start,$stop)."...";
+	  
+	}elseif(($len < $stop) || ($len == $stop)){
+		
+	  return substr($str,$start,$stop);
+	  
+	}else{
+		
+	 return $start;
+	 
+	}
+  }
 }
 
 function x_vert($str,$wrap){
