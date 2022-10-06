@@ -1008,25 +1008,44 @@ function xstart($pick){
 	}
 	
 
-	#include and require
 	function xreq($val){
-		if(empty($val)){
-			x_print("File name cannot be empty!");
-		exit();
+		    if(empty($val)){	
+				x_print("Error:File name cannot be empty!");
+			}elseif(!file_exists($val)){
+				x_print("Error:File required does not exist!");
 			}else{
 				return require_once($val);
 			}
-	
 		}
 		
-		function xinc($val){
-		if(empty($val)){
-			x_print("File name cannot be empty!");
-		exit();
+	function xinc($val){
+			if(empty($val)){	
+				x_print("Error:File name cannot be empty!");
+			}elseif(!file_exists($val)){
+				x_print("Error:File included does not exist!");
 			}else{
 				return include_once($val);
 			}
-	
+		}
+		
+	function x_req($val){
+		if(empty($val)){	
+				x_print("Error:File name cannot be empty!");
+			}elseif(!file_exists($val)){
+				x_print("Error:File required does not exist!");
+			}else{
+				return require($val);
+			}
+		}
+		
+	function x_inc($val){
+		if(empty($val)){	
+				x_print("Error:File name cannot be empty!");
+			}elseif(!file_exists($val)){
+				x_print("Error:File included does not exist!");
+			}else{
+				return include($val);
+			}
 		}
 		
 		function xtitle($val){
